@@ -1,0 +1,11 @@
+---
+name: "Tn5 RNA-Seq Pipeline"
+description: "RNA-Seq mapping and counting for Tn5 libraries"
+contact: "Luisa Pallares <pallares@princeton.edu>"
+pi: "Julien Ayroles <jayroles@princeton.edu>"
+lsi_staff: "Lance Parsons <lparsons@princeton.edu>"
+start_date: "2018-03-30"
+completion_date: ""
+repository: "http://github.com/lparsons/RNAseq_pipeline"
+hostname: ""
+documentation: "README.md"

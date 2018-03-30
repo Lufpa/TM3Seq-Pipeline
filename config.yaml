@@ -1,0 +1,28 @@
+# path or URL to sample sheet (TSV format, columns: sample, fq1, fq2)
+# samples: samples.tsv
+
+# Pattern to input fastq files, use {sample} to inidicate portion of filename
+# that corresponds to the sample name (e.g. data/{sample}.fq.gz)
+fastq_file_pattern: "data/pilot_jan18/test/{sample}.R1.fq.gz"
+
+# the sequencing adapter
+# adapter: ACGGATCGATCGATCGATCGAT
+
+ref:
+  # the tophat2 index
+  index: "path/to/tophat2/index"
+  # gtf file with transcripts
+  annotation: "path/to/annotation.gtf"
+
+params:
+  tophat2: ""
+  trimmomatic:
+      # list of trimmers (see manual)
+      trimmers:
+          - "ILLUMINACLIP:AdaptersTrim.fasta:1:30:7"
+          - "LEADING:3"
+          - "TRAILING:3"
+          - "SLIDINGWINDOW:4:15"
+          - "MINLEN:20"
+      # optional parameters
+      extra: ""

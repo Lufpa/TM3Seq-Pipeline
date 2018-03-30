@@ -1,0 +1,9 @@
+*~
+*.swp
+
+/snakemake*
+scripts/.snakemake*
+
+data/
+working/
+results/
