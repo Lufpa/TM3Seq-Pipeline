@@ -1,9 +1,11 @@
 *~
 *.swp
 
-/snakemake*
+/.snakemake*
 scripts/.snakemake*
+slurm-*.out
 
 data/
 working/
 results/
+logs/

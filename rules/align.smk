@@ -10,16 +10,16 @@ rule align:
     params:
         output_dir="working/tophat2/{sample}",
         index=config["ref"]["index"],
-        options="--GTF {} {}".format(
+        options="--no-novel-juncs --GTF {} {}".format(
               config["ref"]["annotation"],
               config["params"]["tophat2"])
     threads: 24
     conda:
-        "envs/tophat2.yaml
+        "../envs/tophat2.yaml"
     shell:
         "tophat2 "
         "{params.options} "
         "--num-threads {threads} "
         "--output-dir {params.output_dir:q} "
         "{params.index:q} "
-        "{input} >> {log:q} 2>&1"
+        "{input} >{log:q} 2>&1"

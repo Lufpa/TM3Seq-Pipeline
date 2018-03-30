@@ -1,7 +1,7 @@
 __default__:
     "n": 1
     "memory": 2000
-    "qos": "1hour"
+    "qos": "1hr"
 align:
     "n": 4
     "memory": 50000

@@ -3,16 +3,16 @@
 
 # Pattern to input fastq files, use {sample} to inidicate portion of filename
 # that corresponds to the sample name (e.g. data/{sample}.fq.gz)
-fastq_file_pattern: "data/pilot_jan18/test/{sample}.R1.fq.gz"
+fastq_file_pattern: "data/fastq/{sample}.R1.fq.gz"
 
 # the sequencing adapter
 # adapter: ACGGATCGATCGATCGATCGAT
 
 ref:
   # the tophat2 index
-  index: "path/to/tophat2/index"
+  index: "data/dmel_genome/dmel-all-chromosome-r6.14"
   # gtf file with transcripts
-  annotation: "path/to/annotation.gtf"
+  annotation: "data/dmel_genome/dmel-all-r6.14.gtf"
 
 params:
   tophat2: ""
