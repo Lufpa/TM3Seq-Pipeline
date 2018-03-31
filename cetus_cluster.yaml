@@ -5,3 +5,6 @@ __default__:
 align:
     "n": 4
     "memory": 50000
+transcriptome_index:
+    "n": 8
+    "memory": 50000

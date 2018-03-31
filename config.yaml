@@ -9,6 +9,8 @@ fastq_file_pattern: "data/fastq/{sample}.R1.fq.gz"
 # adapter: ACGGATCGATCGATCGATCGAT
 
 ref:
+  # the reference fasta file
+  fasta: "data/dmel_genome/dmel-all-chromosome-r6.14.fa"
   # the tophat2 index
   index: "data/dmel_genome/dmel-all-chromosome-r6.14"
   # gtf file with transcripts
