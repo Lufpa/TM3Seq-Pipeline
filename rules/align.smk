@@ -1,11 +1,11 @@
 rule transcriptome_index:
     input:
-        fasta=config["ref"]["index"],
         gtf=config["ref"]["annotation"]
     output:
         "working/reference/transcriptome_index.rev.2.bt2"
     params:
-        "working/reference/transcriptome_index"
+        bowtie_index=config["ref"]["index"],
+        transcriptome_index="working/reference/transcriptome_index"
     log:
         "logs/tophat2/transcriptome_index.log"
     threads: 24
@@ -15,13 +15,13 @@ rule transcriptome_index:
         "tophat2 "
         "--num-threads {threads} "
         "--GTF {input.gtf:q} "
-        "--transcriptome-index={output:q} "
-        "{input.fasta:q} >{log:q} 2>&1"
+        "--transcriptome-index={params.transcriptome_index:q} "
+        "{params.bowtie_index:q} >{log:q} 2>&1"
 
 
 rule align:
     input:
-        sample="working/trimmed/{sample}.fastq.gz",
+        fastq="working/trimmed/{sample}.fastq.gz",
         transcriptome_index="working/reference/transcriptome_index.rev.2.bt2"
     output:
         # see STAR manual for additional output files
@@ -45,4 +45,4 @@ rule align:
         "--num-threads {threads} "
         "--output-dir {params.output_dir:q} "
         "{params.index:q} "
-        "{input} >{log:q} 2>&1"
+        "{input.fastq} >{log:q} 2>&1"
