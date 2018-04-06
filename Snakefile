@@ -11,11 +11,18 @@ configfile: "config.yaml"
 sample_files = snakemake.utils.listfiles(config["fastq_file_pattern"])
 samples = dict((y[0], x) for x, y in sample_files)
 
+
+def get_fastq(wildcards):
+    return samples[wildcards.sample]
+
+
 rule all:
     input:
-        expand("working/tophat2/{sample}/align_summary.txt",
-               sample=samples.keys())
+        config["results_dir"] + "/multiqc.html"
         # Subsequent target rules can be specified below. They should start with all_*.
 
+include: "rules/fastqc.smk"
 include: "rules/trim.smk"
 include: "rules/align.smk"
+include: "rules/count.smk"
+include: "rules/summary.smk"

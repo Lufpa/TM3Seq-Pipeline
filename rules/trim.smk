@@ -1,7 +1,3 @@
-def get_fastq(wildcards):
-    return samples[wildcards.sample]
-
-
 rule trimmomatic:
     input:
         get_fastq
