@@ -8,7 +8,7 @@ rule count:
     log:
         log_dir + "/featurecounts/{sample}.log"
     threads:
-        8
+        32
     conda:
         "../envs/subread.yaml"
     shell:

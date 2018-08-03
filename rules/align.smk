@@ -11,7 +11,7 @@ rule star_genome_index:
         directory(star_genome_dir)
     log:
         log_dir + "/star/genome_index.log"
-    threads: 10
+    threads: 32
     conda:
         "../envs/star.yaml"
     shell:
@@ -36,7 +36,7 @@ rule star_align:
         prefix=config["working_dir"] + "/star/{sample}/"
     log:
         log_dir + "/star/{sample}.log"
-    threads: 10
+    threads: 32
     conda:
         "../envs/star.yaml"
     shell:

@@ -4,9 +4,9 @@ __default__:
     "qos": "1hr"
     "time": "01:00:00"
 fastqc:
-    "n": 5
+    "n": 10
 trimmomatic:
-    "n": 5
+    "n": 10
 star_align:
     "n": 20
     "memory": 50000
@@ -15,3 +15,5 @@ star_align:
 star_genome_index:
     "n": 10
     "memory": 50000
+count:
+    "n": 10

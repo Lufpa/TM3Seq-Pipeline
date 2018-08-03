@@ -9,7 +9,7 @@ rule trimomatic:
     log:
         log_dir + "/trimmomatic/{sample}.log"
     threads:
-        10
+        32
     conda:
         "../envs/trimmomatic.yaml"
     shell:

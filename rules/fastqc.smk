@@ -7,7 +7,7 @@ rule fastqc:
         log_dir + "/fastqc/{sample}.log"
     params:
         outdir=config["working_dir"] + "/fastqc/{sample}"
-    threads: 5
+    threads: 32
     conda:
         "../envs/fastqc.yaml"
     shell:

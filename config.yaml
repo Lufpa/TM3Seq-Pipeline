@@ -23,6 +23,8 @@ umi:
   mark_umi_duplicates: Yes
 
 params:
+  fastqc:
+    extra: "--adapters AdaptersTrim.fasta --contaminants AdaptersTrim.fasta"
   star:
     # optional star parameters
     extra: ""
