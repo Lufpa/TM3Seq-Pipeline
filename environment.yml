@@ -3,4 +3,5 @@ channels:
     - conda-forge
     - defaults
 dependencies:
-    - bowtie2=2.3.4.1
+    - snakemake=5.2.1
+    - drmaa=0.7.8

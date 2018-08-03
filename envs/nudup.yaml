@@ -3,4 +3,4 @@ channels:
     - conda-forge
     - defaults
 dependencies:
-    - tophat=2.1.1
+    - nudup=2.3.3

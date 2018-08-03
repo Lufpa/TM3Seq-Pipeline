@@ -1,89 +1,52 @@
 import os
 genome_index_base, fasta_extension = os.path.splitext(config["ref"]["fasta"])
-# genome_index_base = re.sub('\.fasta$|\.fa$', '', config["ref"]["fasta"])
-transcriptome_index_base = "{}_transcriptome_index".format(genome_index_base)
+genome_basename = os.path.basename(genome_index_base)
+star_genome_dir = os.path.join(os.path.dirname(config["ref"]["fasta"]), genome_basename + "_star_index")
 
 
-rule genome_index:
+rule star_genome_index:
     input:
-        fasta="{genome}" + fasta_extension
+        fasta=config["ref"]["fasta"]
     output:
-        "{genome}.1.bt2",
-        "{genome}.2.bt2",
-        "{genome}.3.bt2",
-        "{genome}.4.bt2",
-        "{genome}.rev.1.bt2",
-        "{genome}.rev.2.bt2"
+        directory(star_genome_dir)
     log:
-        "logs/bowtie2/genome_index.log"
-    threads: 8
+        log_dir + "/star/genome_index.log"
+    threads: 10
     conda:
-        "../envs/bowtie2.yaml"
+        "../envs/star.yaml"
     shell:
-        "bowtie2-build --threads {threads} {input:q} {wildcards.genome:q}  >{log:q} 2>&1"
+        "mkdir -p {output:q} && "
+        "STAR --runMode genomeGenerate "
+        "--genomeFastaFiles {input.fasta:q} "
+        "--genomeDir {output:q} "
+        "--sjdbGTFfile {config[ref][annotation]:q} "
+        "--sjdbOverhang 100 "
+        "--runThreadN {threads} "
+        ">{log:q} 2>&1"
 
 
-rule transcriptome_index:
+rule star_align:
     input:
-        bowtie2_index="{}.rev.2.bt2".format(genome_index_base),
-        gtf=config["ref"]["annotation"]
+        fastq=config["working_dir"] + "/trimmed/{sample}.fastq.gz",
+        genome_index=star_genome_dir
     output:
-        "{}.1.bt2".format(transcriptome_index_base),
-        "{}.2.bt2".format(transcriptome_index_base),
-        "{}.3.bt2".format(transcriptome_index_base),
-        "{}.4.bt2".format(transcriptome_index_base),
-        "{}.rev.1.bt2".format(transcriptome_index_base),
-        "{}.rev.2.bt2".format(transcriptome_index_base)
+        bam=config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam",
+        log=config["working_dir"] + "/star/{sample}/Log.final.out"
     params:
-        bowtie_index=genome_index_base,
-        transcriptome_index=transcriptome_index_base
+        prefix=config["working_dir"] + "/star/{sample}/"
     log:
-        "logs/tophat2/transcriptome_index.log"
-    threads: 8
+        log_dir + "/star/{sample}.log"
+    threads: 10
     conda:
-        "../envs/tophat2.yaml"
+        "../envs/star.yaml"
     shell:
-        "tophat2 "
-        "--num-threads {threads} "
-        "--GTF {input.gtf:q} "
-        "--transcriptome-index={params.transcriptome_index:q} "
-        "{params.bowtie_index:q} >{log:q} 2>&1"
-
-
-rule align:
-    input:
-        fastq="working/trimmed/{sample}.fastq.gz",
-        genome_index="{}.rev.2.bt2".format(genome_index_base),
-        transcriptome_index="{}.rev.2.bt2".format(transcriptome_index_base)
-    output:
-        accepted_hits="working/tophat2/{sample}/accepted_hits.bam",
-        align_summary="working/tophat2/{sample}/align_summary.txt"
-    log:
-        "logs/tophat2/{sample}.log"
-    params:
-        output_dir="working/tophat2/{sample}",
-        transcriptome_index=transcriptome_index_base,
-        index=genome_index_base,
-        options=config["params"]["tophat2"]
-    threads: 8
-    conda:
-        "../envs/tophat2.yaml"
-    shell:
-        "tophat2 "
-        "{params.options} "
-        "--no-novel-juncs "
-        "--transcriptome-index {params.transcriptome_index:q} "
-        "--num-threads {threads} "
-        "--output-dir {params.output_dir:q} "
-        "{params.index:q} "
-        "{input.fastq} >{log:q} 2>&1"
-
-rule rename_tophat_output:
-    input:
-        "working/tophat2/{sample}/{file}"
-    output:
-        "working/multiqc/tophat2/{sample,\w[^_]+}.{file}"
-    run:
-        (bn, fn) = os.path.split(output[0])
-        shell("""cd {bn}
-              ln -s "../../../{input}" "{fn}" """)
+        "STAR "
+        "{config[params][star][extra]} "
+        "--runThreadN {threads} "
+        "--genomeDir {input.genome_index:q} "
+        "--readFilesIn {input.fastq:q} "
+        "--readFilesCommand {config[params][star][zcat_command]} "
+        "--outSAMtype BAM SortedByCoordinate "
+        "--outFileNamePrefix {params.prefix:q} "
+        "--outStd Log "
+        ">{log:q} 2>&1"
