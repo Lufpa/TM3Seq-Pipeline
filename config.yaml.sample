@@ -34,6 +34,7 @@ params:
     # list of trimmers (see manual)
     trimmers:
       - "ILLUMINACLIP:AdaptersTrim.fasta:1:30:7"
+      - "SLIDINGWINDOW:4:15"
       - "MINLEN:20"
     # optional parameters
     extra: ""
