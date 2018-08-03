@@ -11,7 +11,7 @@ rule multiqc:
         expand(log_dir + "/trimmomatic/{sample}.log", sample=samples.keys()),
         expand(config["working_dir"] + "/star/{sample}/Log.final.out", sample=samples.keys()),
         expand(config["working_dir"] + "/featurecounts/{sample}_counts.tsv.summary", sample=samples.keys()),
-        expand(config["working_dir"] + "/fastqc/{sample}_fastqc.html", sample=samples.keys())
+        expand(config["working_dir"] + "/fastqc/{sample}_fastqc.zip", sample=samples.keys())
     output:
         config["results_dir"] + "/multiqc.html"
     params:
