@@ -2,6 +2,7 @@ __default__:
     "n": 1
     "memory": 2000
     "qos": "1hr"
+    "time": "01:00:00"
 fastqc:
     "n": 5
 trimmomatic:
@@ -9,6 +10,8 @@ trimmomatic:
 star_align:
     "n": 10
     "memory": 50000
+    "qos": "1day"
+    "time": "02:00:00"
 star_genome_index:
     "n": 10
     "memory": 50000
