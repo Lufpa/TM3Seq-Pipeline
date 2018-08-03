@@ -2,6 +2,8 @@ __default__:
     "n": 1
     "memory": 2000
     "qos": "1hr"
+fastqc:
+    "n": 5
 trimmomatic:
     "n": 5
 star_align:

@@ -2,10 +2,22 @@ rule fastqc:
     input:
         get_fastq
     output:
-        html=config["working_dir"] + "/fastqc/{sample}.html",
-        zip=config["working_dir"] + "/fastqc/{sample}_fastqc.zip"
+        config["working_dir"] + "/fastqc/{sample}_fastqc.zip"
     log:
         log_dir + "/fastqc/{sample}.log"
-    params: ""
-    wrapper:
-        "0.27.1/bio/fastqc"
+    params:
+        outdir=config["working_dir"] + "/fastqc/{sample}"
+    threads: 5
+    conda:
+        "../envs/fastqc.yaml"
+    shell:
+        "mkdir -p {params.outdir:q} && "
+        "fastqc --quiet "
+        "--threads {threads} "
+        "--outdir {params.outdir} "
+        "--noextract "
+        "{config[params][fastqc][extra]} "
+        "{input:q} "
+        ">{log:q} 2>&1 && "
+        "mv '{params.outdir}/{wildcards.sample}_fastqc.zip' {output:q} && "
+        "rm -rf {params.outdir:q}"
