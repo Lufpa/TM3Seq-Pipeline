@@ -1,4 +1,4 @@
-rule trimomatic:
+rule trimmomatic:
     input:
         get_fastq
     output:
