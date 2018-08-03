@@ -17,6 +17,6 @@ rule multiqc:
     params:
         ""  # Optional: extra parameters for multiqc.
     log:
-        "logs/multiqc.log"
+        log_dir + "/multiqc.log"
     wrapper:
-        "0.23.1/bio/multiqc"
+        "0.27.1/bio/multiqc"

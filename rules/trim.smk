@@ -9,4 +9,4 @@ rule trimmomatic:
     log:
         log_dir + "/trimmomatic/{sample}.log"
     wrapper:
-        "0.23.1/bio/trimmomatic/se"
+        "0.27.1/bio/trimmomatic/se"
