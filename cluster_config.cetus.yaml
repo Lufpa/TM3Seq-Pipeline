@@ -3,7 +3,7 @@ __default__:
     "memory": 2000
     "qos": "1hr"
 trimmomatic:
-    "n": 4
+    "n": 1
 star_align:
     "n": 10
     "memory": 50000
