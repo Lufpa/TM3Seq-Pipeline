@@ -19,5 +19,7 @@ rule fastqc:
         "{config[params][fastqc][extra]} "
         "{input:q} "
         ">{log:q} 2>&1 && "
-        "mv '{params.outdir}/{wildcards.sample}_fastqc.zip' {output:q} && "
+        "mv '{params.outdir}/'*_fastqc.zip {output:q} && "
         "rm -rf {params.outdir:q}"
+
+

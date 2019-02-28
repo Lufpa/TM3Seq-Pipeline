@@ -18,5 +18,19 @@ rule multiqc:
         ""  # Optional: extra parameters for multiqc.
     log:
         log_dir + "/multiqc.log"
-    wrapper:
-        "0.27.1/bio/multiqc"
+    conda:
+        "../envs/multiqc.yaml"
+    run:
+        from os import path
+        input_dirs = set(path.dirname(fp) for fp in input)
+        output_dir = path.dirname(output[0])
+        output_name = path.basename(output[0])
+        shell(
+            "multiqc"
+            " {params}"
+            " --force"
+            " -o {output_dir}"
+            " -n {output_name}"
+            " {input_dirs}"
+            " > {log:q} 2>&1")
+

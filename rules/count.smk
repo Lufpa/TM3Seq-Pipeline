@@ -1,7 +1,7 @@
 rule count:
     input:
         gtf=config["ref"]["annotation"],
-        bam=config["working_dir"] + "/nudup/{sample}.sorted.markdup.bam" if {config["umi"]["mark_umi_duplicates"]} else config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam"
+        bam=config["working_dir"] + "/nudup/{sample}.sorted.markdup.bam" if config["umi"]["mark_umi_duplicates"] else config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam"
     output:
         counts=config["working_dir"] + "/featurecounts/{sample}_counts.tsv",
         summary=config["working_dir"] + "/featurecounts/{sample}_counts.tsv.summary"
