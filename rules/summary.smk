@@ -15,7 +15,7 @@ rule multiqc:
     output:
         config["results_dir"] + "/multiqc.html"
     params:
-        ""  # Optional: extra parameters for multiqc.
+        "--cl_config \"trimmomatic: {s_name_filenames: true}\""  # Optional: extra parameters for multiqc.
     log:
         log_dir + "/multiqc.log"
     conda:

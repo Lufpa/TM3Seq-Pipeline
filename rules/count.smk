@@ -12,6 +12,7 @@ rule count:
     conda:
         "../envs/subread.yaml"
     shell:
+        "ln -s {input.bam:q} '{wildcards.sample}.bam' && "
         "featureCounts "
         "-t {config[params][featurecounts][feature_type]} "
         "-g {config[params][featurecounts][attribute_type]} "
@@ -19,8 +20,9 @@ rule count:
         "{config[params][featurecounts][extra]} "
         "-T {threads} "
         "-o {output.counts:q} "
-        "{input.bam:q} "
-        ">{log:q} 2>&1"
+        "'{wildcards.sample}.bam' "
+        ">{log:q} 2>&1 && "
+        "rm '{wildcards.sample}.bam'"
 
 rule combined_counts:
     input:
