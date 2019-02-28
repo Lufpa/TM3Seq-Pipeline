@@ -1,4 +1,4 @@
-# Pattern to input fastq files, use {sample} to inidicate portion of filename
+# Pattern to input fastq files, use {sample} to indicate portion of filename
 # that corresponds to the sample name (e.g. data/{sample}.fq.gz)
 fastq_file_pattern: "data/{sample}.fastq.gz"
 

@@ -1,6 +1,6 @@
 channels:
-    - bioconda
     - conda-forge
+    - bioconda
     - defaults
 dependencies:
-    - subread=1.6.1
+    - subread=1.6.3

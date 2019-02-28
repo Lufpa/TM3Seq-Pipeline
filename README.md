@@ -23,14 +23,14 @@ Dependencies are installed using [Bioconda](https://bioconda.github.io/) where p
 3.  Edit config as needed
 
     ```
-    cp config.yaml.sample config.yaml
+    cp config.defaults.yml config.yml
     nano config.yaml
     ```
 
 4.  Install dependencies into isolated environment
 
     ```
-    conda env create -n <project> --file environment.yaml
+    conda env create -n <project> --file environment.yml
     ```
 
 5.  Activate environment
