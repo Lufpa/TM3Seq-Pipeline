@@ -9,3 +9,5 @@ data/
 working/
 results/
 logs/
+
+.project_description.yaml

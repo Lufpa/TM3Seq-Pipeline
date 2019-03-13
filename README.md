@@ -26,12 +26,12 @@ This workflow is designed to generate counts of the number of uniquly mapped rea
 
 ### Workflow
 
-1.  Fastq summary and QC metrics - Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to determine some basic QC metrics from the raw fastq files
-2.  Trim reads - Use [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) to trim off adapter and low quality sequence from the ends of reads
-3.  Align reads - Use [STAR](https://github.com/alexdobin/STAR) to aign reads to the genome, accounting for known splice junctions
-4.  Deduplicate - Remove duplicates using [nudup](https://github.com/nugentechnologies/nudup) which utilizes unique molecular identifiers
-5.  Count - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanify the number of reads uniquly mapped to each gene
-6.  Summarize - Combine the count files and run [MultiQC](https://multiqc.info/) to generate a summary report
+1.  **Fastq summary and QC metrics** - Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to determine some basic QC metrics from the raw fastq files
+2.  **Trim reads** - Use [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) to trim off adapter and low quality sequence from the ends of reads
+3.  **Align reads** - Use [STAR](https://github.com/alexdobin/STAR) to aign reads to the genome, accounting for known splice junctions
+4.  **Deduplicate (optional)** - Remove duplicates using [nudup](https://github.com/nugentechnologies/nudup) which utilizes unique molecular identifiers
+5.  **Count** - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanify the number of reads uniquly mapped to each gene
+6.  **Summarize** - Combine the count files and run [MultiQC](https://multiqc.info/) to generate a summary report
 
 
 ## Setup environment and run workflow
@@ -45,31 +45,32 @@ This workflow is designed to generate counts of the number of uniquly mapped rea
 
 2.  Input data
 
-    Place demultiplexed fastq.gz files in `data` directory (see `RNAseq_demultiplex.sh` below)
+    Place demultiplexed `fastq.gz` files in a `data` directory (see `RNAseq_demultiplex.sh` below)
 
-3.  Edit config as needed
+3.  Edit configuration files as needed
 
     ```bash
     cp config.defaults.yml myconfig.yml
-    nano config.yaml
+    nano myconfig.yaml
+    
     # Only if running on a cluster
     cp cluster_config.yml mycluster_config.yml
     nano mycluster_config.yml
     ```
 
-4.  Install dependencies into isolated environment
+4.  Install dependencies into an isolated environment
 
     ```bash
     conda env create -n <project> --file environment.yml
     ```
 
-5.  Activate environment
+5.  Activate the environment
 
     ```bash
     source activate <project>
     ```
 
-6.  Execute workflow
+6.  Execute the workflow
 
     ```bash
     snakemake --configfile "myconfig.yml" --use-conda 
@@ -107,7 +108,7 @@ snakemake \
     --cores 100
 ``` 
 
-### Running workflow on Princeton LSI cluster using [DRMAA](https://en.wikipedia.org/wiki/DRMAA) (`gen-comp1`)
+### Running workflow on Princeton LSI cluster using [DRMAA](https://en.wikipedia.org/wiki/DRMAA)
 
 ```bash
 snakemake \
