@@ -33,4 +33,3 @@ rule multiqc:
             " -n {output_name}"
             " {input_dirs}"
             " > {log:q} 2>&1")
-
