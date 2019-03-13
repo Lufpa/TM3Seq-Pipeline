@@ -24,7 +24,7 @@ umi:
 
 params:
   fastqc:
-    extra: "--adapters AdaptersTrim.fasta --contaminants AdaptersTrim.fasta"
+    extra: ""
   star:
     # optional star parameters
     extra: ""

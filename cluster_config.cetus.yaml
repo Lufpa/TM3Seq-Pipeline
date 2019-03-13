@@ -8,7 +8,7 @@ fastqc:
 trimmomatic:
     "n": 10
 star_align:
-    "n": 20
+    "n": 10
     "memory": 50000
     "qos": "1day"
     "time": "02:00:00"
