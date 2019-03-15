@@ -4,7 +4,7 @@ title: Tn5 RNA-Seq Liquid-handling Robot Protocols
 
 ## Liquid-handling Robot Protocols
 
-\| [Home](/) \| [Analysis Pipeline](/pipeline) \| [Laboratory Protocols](/laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [Laboratory Protocols](laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 1.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rutrum enim sit amet scelerisque aliquet. Vivamus leo nulla, imperdiet accumsan tempus in, feugiat eget erat. Mauris congue nec nulla id ultrices. Suspendisse consequat ligula vitae quam lobortis, ultricies aliquet mauris vestibulum. Donec rutrum faucibus dui, a efficitur nisi aliquet in. Praesent a bibendum quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras eros nulla, tempor eu convallis fermentum, sollicitudin in risus. Quisque in dui nec leo posuere dapibus sit amet eu nisi. Nam ut risus vel mi maximus fringilla non eu turpis. Nam tempor dignissim nulla vitae mollis. Etiam sed risus erat. Sed egestas nisi nunc, ac vehicula mi facilisis eu. Curabitur vel lacus enim. Donec nibh nulla, tempor sit amet imperdiet ut, sollicitudin ornare orci. Phasellus ac massa at dolor posuere consectetur. 
 

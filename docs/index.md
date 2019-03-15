@@ -1,6 +1,6 @@
 # Tn5 RNA-Seq
 
-\| [Home](/) \| [Analysis Pipeline](/pipeline) \| [Laboratory Protocols](/laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [Laboratory Protocols](laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 ## Abstract
 

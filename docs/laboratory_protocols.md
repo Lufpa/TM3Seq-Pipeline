@@ -4,7 +4,7 @@ title: Tn5 RNA-Seq Laboratory Protocols
 
 ## Laboratory Protocols
 
-\| [Home](/) \| [Analysis Pipeline](/pipeline) \| [Laboratory Protocols](/laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [Laboratory Protocols](laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 1.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta a dui nec accumsan. Mauris bibendum nibh ut odio hendrerit volutpat. In eu tellus ac urna euismod euismod. Suspendisse vitae molestie ligula. Morbi sed aliquet ipsum. Maecenas eget blandit leo. Duis rhoncus arcu non gravida hendrerit. Proin nunc ipsum, porta et tortor sed, eleifend aliquet nunc.
 
