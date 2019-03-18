@@ -14,7 +14,7 @@ title: Tn5 RNA-Seq - TM3'seq Protocol
 See supplementary table 1
 
 ### Buffers:
-**(a)** re-association buffer [store at room T], 10mM Tris pH 8.0, 50mM NaCl, 1mM EDTA. **(b)** re-association buffer:glycerol 1:1 [store at room T], mix one volume of re-association buffer and one volume of glycerol. **(c)** TAPS buffer 5x pH 8.5 from (Picelli, Faridani et al. (2014))[<sup>1</sup>] [store at 4°C], 50mM TAPS, 25mM MgCl2, 50% v/v DMF. 
+**(a)** re-association buffer [store at room T], 10mM Tris pH 8.0, 50mM NaCl, 1mM EDTA. **(b)** re-association buffer:glycerol 1:1 [store at room T], mix one volume of re-association buffer and one volume of glycerol. **(c)** TAPS buffer 5x pH 8.5 from (Picelli, Faridani et al. (2014))[^1] [store at 4°C], 50mM TAPS, 25mM MgCl2, 50% v/v DMF. 
 
 ### Equipment:
 **(a)** Thermal cycler.
@@ -143,5 +143,5 @@ See supplementary table 1
 
 ### References
 
-[<sup>1</sup>]:
+[^1]:
     [Picelli, S., O. R. Faridani, Å. K. Björklund, G. Winberg, S. Sagasser and R. Sandberg (2014). "Full-length RNA-seq from single cells using Smart-seq2." <u>Nature Protocols</u> 9: 171.](https://doi.org/10.1038/nprot.2014.006)

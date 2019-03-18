@@ -6,7 +6,7 @@ title: Tn5 RNA-Seq - mRNA Extraction
 
 \| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
-*This is an optional step given that total RNA can be used as input material for TM3’seq. RNA extraction was chosen instead of total RNA isolation because it can be implemented in 96-well plates and liquid-handling platforms to increase throughput. The mRNA isolation protocol is based on (Kumar, Ichihashi et al. (2012))[<sup>1</sup>]*
+*This is an optional step given that total RNA can be used as input material for TM3’seq. RNA extraction was chosen instead of total RNA isolation because it can be implemented in 96-well plates and liquid-handling platforms to increase throughput. The mRNA isolation protocol is based on (Kumar, Ichihashi et al. (2012))[^1]*
 
 ### Reagents and materials:
 **(a)** Dynabeads™ mRNA DIRECT™ Purification Kit (ThermoFisher, #61012). This kit includes oligo(dT) beads, Lysis/Binding buffer –LBB, washing buffer A and B, and Tris-HCl. In order to reduce costs when processing many samples, we suggest **(b)** using homebrew LBB buffer for the washing steps and using the kit LBB for tissue homogenization. **(c)** Homebrew low-salt buffer – LSB. **(d)** 2.8mm Stainless steel grinding beads (OPS diagnostics, #089-5000-11). **(e)** 96-well PCR plates (or PCR strips if processing less samples) with PCR strip lids [*Important: make sure to use lids that prevent leaks during sample homogenization*].
@@ -24,7 +24,7 @@ title: Tn5 RNA-Seq - mRNA Extraction
 1.  Take all buffers and Dynabeads out of their 4°C storage for at least 30min before starting the protocol. Mix thoroughly to make sure any precipitate that might have formed is dissolved. 
 2.  Add β-mercaptoethanol and Antifoam A to the LBB buffer before homogenization of the tissue. LBB+ = 10ml LBB, 150µl Antifoam A, 50µl β-mercaptoethanol. 
 
-    *If working with LBB from the Dynabeads kit and homebrew LBB, add β-mercaptoethanol and Antifoam A to both. LBB makes a lot of foam during homogenization. When working with low tissue input like Drosophila heads, any amount of RNA lost to the foam will determine whether the library preparation will be successful or not. In our experience, the modifications made by [Kumar, Ichihashi et al. (2012)][<sup>1</sup>] to LBB buffer to reduce foam were determinant for the successful library preparation from a single fly head.*
+    *If working with LBB from the Dynabeads kit and homebrew LBB, add β-mercaptoethanol and Antifoam A to both. LBB makes a lot of foam during homogenization. When working with low tissue input like Drosophila heads, any amount of RNA lost to the foam will determine whether the library preparation will be successful or not. In our experience, the modifications made by [Kumar, Ichihashi et al. (2012)][^1] to LBB buffer to reduce foam were determinant for the successful library preparation from a single fly head.*
 
 ### Homogenizing the tissue
 
@@ -72,5 +72,5 @@ title: Tn5 RNA-Seq - mRNA Extraction
 
 ## References
 
-[<sup>1</sup>]:
+[^1]:
 	[Kumar, R., Y. Ichihashi, S. Kimura, D. Chitwood, L. Headland, J. Peng, J. Maloof and N. Sinha (2012). "A High-Throughput Method for Illumina RNA-Seq Library Preparation." <u>Frontiers in Plant Science</u> *3*: 202.](https://doi.org/10.3389/fpls.2012.00202)
