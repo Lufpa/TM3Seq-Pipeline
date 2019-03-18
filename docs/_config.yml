@@ -2,3 +2,6 @@ theme: jekyll-theme-slate
 title: Tn5 RNA-Seq
 description: Tn5 RNA-Seq by Luisa Pallares and Julien Ayroles
 markdown: CommonMarkGhPages
+commonmark:
+  options: ["SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table"]
