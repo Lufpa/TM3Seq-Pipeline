@@ -30,9 +30,24 @@ This workflow is designed to generate counts of the number of uniquly mapped rea
 2.  **Trim reads** - Use [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) to trim off adapter and low quality sequence from the ends of reads
 3.  **Align reads** - Use [STAR](https://github.com/alexdobin/STAR) to aign reads to the genome, accounting for known splice junctions
 4.  **Deduplicate (optional)** - Remove duplicates using [nudup](https://github.com/nugentechnologies/nudup) which utilizes unique molecular identifiers
-5.  **Count** - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanify the number of reads uniquly mapped to each gene
+5.  **Count** - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanyify the number of reads uniquly mapped to each gene
 6.  **Summarize** - Combine the count files and run [MultiQC](https://multiqc.info/) to generate a summary report
 
+
+## Install prerequsites
+
+1.  Install conda
+
+    *   If you have [Anaconda](https://www.anaconda.com/distribution/) installed, you already have it.
+    *   Otherwise, install the [Miniconda](https://conda.io/en/latest/miniconda.html) package.
+    
+2.  Enable the [Bioconda](https://bioconda.github.io/#using-bioconda) channel
+
+    ```
+    conda config --add channels defaults
+    conda config --add channels bioconda
+    conda config --add channels conda-forge
+    ```
 
 ## Setup environment and run workflow
 
@@ -51,7 +66,7 @@ This workflow is designed to generate counts of the number of uniquly mapped rea
 
     ```bash
     cp config.defaults.yml myconfig.yml
-    nano myconfig.yaml
+    nano myconfig.yml
     
     # Only if running on a cluster
     cp cluster_config.yml mycluster_config.yml
@@ -113,7 +128,7 @@ snakemake \
 ```bash
 snakemake \
     --configfile "myconfig.yml" \
-    --cluster-config "cetus_cluster.yaml" \
+    --cluster-config "cetus_cluster.yml" \
     --drmaa " --cpus-per-task={cluster.n} --mem={cluster.memory} --qos={cluster.qos} --time={cluster.time}" \
     --use-conda \
     --cores 1000 \

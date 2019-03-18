@@ -12,7 +12,7 @@ rule nudup:
     log:
         log_dir + "/nudup/{sample}.log"
     conda:
-        "../envs/nudup.yaml"
+        "../envs/nudup.yml"
     shell:
         "mkdir -p {params.tmp_dir:q} && "
         "nudup.py "

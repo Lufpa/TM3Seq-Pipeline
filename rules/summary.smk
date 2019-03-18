@@ -28,7 +28,7 @@ rule multiqc:
     log:
         log_dir + "/multiqc.log"
     conda:
-        "../envs/multiqc.yaml"
+        "../envs/multiqc.yml"
     shell:
         "multiqc"
         " {params.multiqc}"

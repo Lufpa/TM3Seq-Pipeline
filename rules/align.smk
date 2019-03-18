@@ -13,7 +13,7 @@ rule star_genome_index:
         log_dir + "/star/genome_index.log"
     threads: 32
     conda:
-        "../envs/star.yaml"
+        "../envs/star.yml"
     shell:
         "mkdir -p {output:q} && "
         "STAR --runMode genomeGenerate "
@@ -38,7 +38,7 @@ rule star_align:
         log_dir + "/star/{sample}.log"
     threads: 32
     conda:
-        "../envs/star.yaml"
+        "../envs/star.yml"
     shell:
         "STAR "
         "{config[params][star][extra]} "

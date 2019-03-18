@@ -9,7 +9,7 @@ rule fastqc:
         outdir=config["working_dir"] + "/fastqc/{sample}"
     threads: 32
     conda:
-        "../envs/fastqc.yaml"
+        "../envs/fastqc.yml"
     shell:
         "mkdir -p {params.outdir:q} && "
         "fastqc --quiet "
@@ -21,5 +21,3 @@ rule fastqc:
         ">{log:q} 2>&1 && "
         "mv '{params.outdir}/'*_fastqc.zip {output:q} && "
         "rm -rf {params.outdir:q}"
-
-

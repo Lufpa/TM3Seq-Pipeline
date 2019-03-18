@@ -10,7 +10,7 @@ rule count:
     threads:
         32
     conda:
-        "../envs/subread.yaml"
+        "../envs/subread.yml"
     shell:
         "ln -s {input.bam:q} '{wildcards.sample}.bam' && "
         "featureCounts "

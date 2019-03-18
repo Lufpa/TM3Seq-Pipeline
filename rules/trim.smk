@@ -11,7 +11,7 @@ rule trimmomatic:
     threads:
         32
     conda:
-        "../envs/trimmomatic.yaml"
+        "../envs/trimmomatic.yml"
     shell:
       "trimmomatic SE {params.extra} "
       "{input:q} {output:q} "
