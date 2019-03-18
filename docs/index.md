@@ -1,6 +1,6 @@
 # Tn5 RNA-Seq
 
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [Laboratory Protocols](laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 ## Abstract
 
@@ -12,4 +12,4 @@ Etiam venenatis, justo et ultricies tristique, turpis felis accumsan mi, vitae v
 _Luisa Pallares, Julien F. Ayroles_
 bioRxiv 000000; doi: <https://doi.org/10.1101/000000>
 
-[![Figure describing the protocol](FigureDescribingProtocol.png){:width="500px"}](FigureDescribingProtocol.pdf)
+[![Figure describing the protocol](FigureDescribingProtocol.png)](FigureDescribingProtocol.pdf)

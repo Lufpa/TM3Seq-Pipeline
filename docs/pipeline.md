@@ -4,7 +4,7 @@ title: Tn5 RNA-Seq Pipeline
 
 ## Tn5 RNA-Seq Pipeline
 
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [Laboratory Protocols](laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 Workflow for the Tn5-TagSeq manuscript.
 
