@@ -6,6 +6,13 @@
 #     shell:
 #         "cp {input:q} {output:q}"
 
+from os import path
+
+#def get_multiqc_dirs(wildcards):
+#    return set(path.dirname(fp) for fp in wildcards.input)
+#    return samples[wildcards.sample]
+
+
 rule multiqc:
     input:
         expand(log_dir + "/trimmomatic/{sample}.log", sample=samples.keys()),
@@ -15,21 +22,18 @@ rule multiqc:
     output:
         config["results_dir"] + "/multiqc.html"
     params:
-        "--cl_config \"trimmomatic: {s_name_filenames: true}\""  # Optional: extra parameters for multiqc.
+        multiqc="--cl_config \"trimmomatic: {s_name_filenames: true}\"",  # Optional: extra parameters for multiqc.
+        output_dir=config['results_dir'],
+        output_name="multiqc.html"
     log:
         log_dir + "/multiqc.log"
     conda:
         "../envs/multiqc.yaml"
-    run:
-        from os import path
-        input_dirs = set(path.dirname(fp) for fp in input)
-        output_dir = path.dirname(output[0])
-        output_name = path.basename(output[0])
-        shell(
-            "multiqc"
-            " {params}"
-            " --force"
-            " -o {output_dir}"
-            " -n {output_name}"
-            " {input_dirs}"
-            " > {log:q} 2>&1")
+    shell:
+        "multiqc"
+        " {params.multiqc}"
+        " --force"
+        " -o {params.output_dir:q} "
+        " -n {params.output_name:q} "
+        " {input:q}"
+        " > {log:q} 2>&1"
