@@ -6,18 +6,73 @@ title: Tn5 RNA-Seq Laboratory Protocols
 
 \| [Home](index) \| [Analysis Pipeline](pipeline) \| [Laboratory Protocols](laboratory_protocols) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
-1.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta a dui nec accumsan. Mauris bibendum nibh ut odio hendrerit volutpat. In eu tellus ac urna euismod euismod. Suspendisse vitae molestie ligula. Morbi sed aliquet ipsum. Maecenas eget blandit leo. Duis rhoncus arcu non gravida hendrerit. Proin nunc ipsum, porta et tortor sed, eleifend aliquet nunc.
+### mRNA Extraction Protocol
 
-2.  Duis ut lacus porta, vestibulum dui egestas, mattis erat. Maecenas ut leo luctus, aliquet justo et, ornare ex. Nunc id nibh a erat semper luctus a non velit. Curabitur non varius tellus, vitae maximus diam. Donec a nisl commodo, porttitor lorem at, consectetur velit. Vivamus vulputate velit quis enim pharetra, sed volutpat lacus pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse dictum eu dui nec sodales. Nulla cursus, turpis a tempus venenatis, felis purus convallis nunc, eu vestibulum lorem felis et eros. Morbi pretium, magna sit amet feugiat consequat, mi augue laoreet sem, sed tempor augue libero et leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus in orci finibus, euismod odio quis, consectetur purus. Sed vel eleifend arcu. Fusce dui nunc, blandit a ultricies a, rhoncus quis justo.
+#### mRNA extraction
 
-3.  Pellentesque ultricies pulvinar purus, blandit sollicitudin nibh mollis et. Vivamus semper nisl in sem ullamcorper, et finibus lectus aliquam. Phasellus ultrices turpis sed aliquam luctus. Suspendisse vehicula consectetur metus. Vivamus tincidunt risus eget feugiat mollis. Phasellus viverra vitae diam id luctus. Sed pharetra, turpis sed consectetur volutpat, urna dui commodo ipsum, eu maximus odio urna quis turpis. Aliquam mattis arcu sit amet sem congue posuere. Nunc sed lacus a enim lobortis sollicitudin ac scelerisque nisi.
+*This is an optional step given that total RNA can be used as input material for TM3’seq. RNA extraction was chosen instead of total RNA isolation because it can be implemented in 96-well plates and liquid-handling platforms to increase throughput. The mRNA isolation protocol is based on (Kumar, Ichihashi et al. (2012))[^1]*
 
-4.  Praesent egestas ultrices turpis, id dictum ante rhoncus volutpat. Mauris placerat ante at maximus gravida. Cras placerat quis orci eget elementum. Nunc nec lectus sed mi efficitur consequat. Curabitur fringilla sagittis ultrices. Etiam eu erat ultrices, egestas neque non, commodo diam. Curabitur sed massa commodo, suscipit ipsum non, sollicitudin magna. Nullam dictum massa id tortor pharetra, porta iaculis turpis eleifend. Donec et risus nec lorem pretium laoreet ut at dui. Suspendisse posuere magna et vulputate finibus. Sed malesuada hendrerit nisi at vulputate. Praesent tempor nibh tellus, at euismod purus dictum id. Donec elementum non leo nec suscipit.
+#### Reagents and materials:
+**(a)** Dynabeads™ mRNA DIRECT™ Purification Kit (ThermoFisher, #61012). This kit includes oligo(dT) beads, Lysis/Binding buffer –LBB, washing buffer A and B, and Tris-HCl. In order to reduce costs when processing many samples, we suggest **(b)** using homebrew LBB buffer for the washing steps and using the kit LBB for tissue homogenization. **(c)** Homebrew low-salt buffer – LSB. **(d)** 2.8mm Stainless steel grinding beads (OPS diagnostics, #089-5000-11). **(e)** 96-well PCR plates (or PCR strips if processing less samples) with PCR strip lids [*Important: make sure to use lids that prevent leaks during sample homogenization*].
 
-5.  Cras dictum justo quis lectus bibendum, sed porttitor dui porta. In hendrerit ligula libero, ac pretium dolor commodo nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In vestibulum mi non nisl consequat posuere. Vestibulum maximus pretium venenatis. Ut id imperdiet dolor, eget gravida ante. Fusce consequat, arcu ut fringilla rhoncus, orci libero aliquam lectus, ac vehicula enim enim nec justo. Praesent sapien orci, vehicula sit amet euismod in, ultrices ac lorem. Duis accumsan quis metus in dictum. Cras eget feugiat mi. Morbi efficitur eros ante, congue venenatis quam convallis nec.
+#### Buffers:
+**(a)** homebrew LBB [store at 4°C], 100mM Tris-HCl pH 7.5, 500mM LiCl, 10mM EDTA pH 8.0, 1% SDS, 5mM DTT. **(b)** homebrew LSB [store at 4°C], 20mM Tris-HCl pH 7.5, 150mM NaCl, 1mM EDTA. 
 
-6.  Cras volutpat, ex sed ultricies varius, felis nulla posuere felis, vitae elementum enim orci ac lectus. Integer vel lacus non nunc suscipit semper id sed risus. Maecenas rutrum ligula sit amet rhoncus cursus. Cras semper tortor a velit aliquam, nec placerat massa mattis. Donec bibendum sed est ac placerat. Nam tempor elit diam, ut eleifend lacus ornare vitae. Mauris blandit magna sit amet tortor tristique, vitae pellentesque nisl ultrices. Suspendisse in risus varius lacus dapibus convallis. Maecenas at orci erat. Pellentesque cursus nulla vitae consequat luctus. Vestibulum fermentum, felis eu mattis facilisis, diam enim dapibus augue, ultrices bibendum velit nisl eu lacus. Duis tempus sem in porttitor feugiat. Phasellus tempor orci sed erat ultricies, at sagittis ligula congue. Nulla volutpat velit sed suscipit mollis. Vivamus accumsan eget dolor non imperdiet.
+#### Equipment:
+**(a)** Any homogenizer that can handle 96-well plates, we used Talboys High Throughput Homogenizer (#930145). **(b)** 96-well plate magnet (Invitrogen™, Magnetic Stand-96, AM10027).
 
-7.  Maecenas eget efficitur erat. Aenean tempus vestibulum tellus, non finibus ante commodo at. Mauris ultricies tempus lacus vel lobortis. Donec eu ultricies metus. Nam tincidunt, est a sagittis tempor, sem felis luctus tellus, a varius mauris nisl eget lorem. Vestibulum malesuada magna sit amet augue dignissim, et imperdiet nisi ullamcorper. Nullam porttitor congue leo, eget vehicula diam. Duis semper arcu at elit ultrices suscipit. Cras ac finibus sem. Nunc faucibus luctus tellus, eu hendrerit ipsum hendrerit ac. Maecenas sed sem ullamcorper, hendrerit neque vel, mattis enim. Vivamus fermentum lacus eu nunc eleifend, aliquet accumsan lectus luctus. Nulla facilisi.
+#### Preparing the buffers
 
-8.  Maecenas augue mi, porta at ullamcorper sit amet, bibendum et odio. Etiam laoreet urna sodales, dapibus mauris eu, vehicula velit. Sed tellus justo, pulvinar ac quam sed, aliquam euismod dui. Donec dignissim arcu ac metus varius, id ultrices arcu varius. Vestibulum maximus erat sapien, eget ultricies urna dignissim eget. Ut volutpat est et blandit vulputate. Quisque arcu nisi, aliquet in justo nec, aliquam lobortis eros. Vivamus magna magna, molestie id lorem sed, euismod venenatis metus. Phasellus semper ante vel odio tincidunt, a dictum elit cursus. Nullam eget diam scelerisque, aliquam tortor at, sagittis purus. Duis efficitur ac arcu a tristique.
+1.  Take all buffers and Dynabeads out of their 4°C storage for at least 30min before starting the protocol. Mix thoroughly to make sure any precipitate that might have formed is dissolved. 
+2.  Add β-mercaptoethanol and Antifoam A to the LBB buffer before homogenization of the tissue. LBB+ = 10ml LBB, 150µl Antifoam A, 50µl β-mercaptoethanol. 
+
+*If working with LBB from the Dynabeads kit and homebrew LBB, add β-mercaptoethanol and Antifoam A to both. LBB makes a lot of foam during homogenization. When working with low tissue input like Drosophila heads, any amount of RNA lost to the foam will determine whether the library preparation will be successful or not. In our experience, the modifications made by [Kumar, Ichihashi et al. (2012)][^1] to LBB buffer to reduce foam were determinant for the successful library preparation from a single fly head.*
+
+#### Homogenizing the tissue
+
+3.  Add one grinding bead to each well of the 96-well plate containing the samples. Keep the plate on a pre-chilled rack.
+
+4.  Add 100µl of LBB+ buffer to each well. Put the PCR strip lids on and place in a homogenizer for 5-10min, max speed.
+
+    *This volume was used for single Drosophila head and single body, but it can be increased if working with larger input samples, however, the PCR tubes will need to be replaced by 1.5ml tubes. If this volume is modified, we recommend modifying the volume used in the other washing steps*
+
+6.  Keep at room temperature for at least 5min, this will give time for lysis to be completed while the foam goes down.
+
+7.  Centrifuge for 10 minutes to get rid of the rest of the foam. While performing this step, prepare the Dynabeads (step 8). At this point, the lysate can be transferred to a new PCR plate and stored at -80°C if necessary.
+
+#### Preparing the oligo-dT beads
+
+8.  While samples are being centrifuged (step 7), re suspend Dynabeads thoroughly before use by turning the bottle upside down repeatedly.
+
+9.  Transfer 20µl beads for 100µl lysate into each well of a new 96-well plate and place it on the magnet. Wait 2-5mins or until the suspension is clear, remove the supernatant without disturbing the beads.
+
+    *This volume of beads was optimized to get as much mRNA from a single Drosophila head at the lowest possible cost; it was also used to process single fly bodies. However, if working with larger samples, this volume can be increased to recover more mRNA*
+
+10. Remove the plate from the magnet. Add 100µl of LBB+ buffer to each well, and wash the beads by pipetting up and down until the solution looks homogeneous.
+
+11. Place the plate on the magnet, wait until suspension is clear, and remove the LBB+ buffer without disturbing the beads. Remove the plate from the magnet.
+
+#### mRNA extraction
+
+12. Add the sample lysate (from step 7) to the plate with beads. Transfer as much lysate as possible without taking the debris pellet.
+
+13. Re-suspend the beads by pipetting up and down several times until the solution looks homogeneous. Incubate at room temperature for 10min using a plate mixer if available. During this step, the polyA tail of RNA molecules will bind to the oligo-dT beads.
+
+    *If final mRNA yield is lower than expected, the incubation time can be increased; we didn’t see any significant improvement when increasing incubation time, but it might become relevant when using higher RNA input.*
+
+14. Place the plate on the magnet, and wait 2-5min, or until the solution is clear. Remove the supernatant without disturbing the beads. At this step, the mRNA is already bound to the beads. Remove plate from the magnet.
+
+15. Add 100µl of Washing Buffer A to each well and pipet up and down several times until the beads are totally re-suspended. Place the plate on the magnet, wait until solution is clear and remove the buffer. Be careful not to disturb the beads. Remove plate from magnet.
+
+16. Add 100µl of Washing Buffer B to each well, and perform the washing step as described in 15.
+
+17. Add 100µl of LSB buffer to each well and proceed as in 15.
+
+18. Add 11µl of 10mM Tris-HCl to each well and mix thoroughly to re-suspend the beads. Incubate the plate at 80°C for 2mins to elute the mRNA from the beads. Place the plate immediately on the magnet and wait until the solution is clear. Remove 10µl of supernatant that now contains the mRNA and transfer to a new plate. This mRNA is ready to be used as input for library preparation.
+
+    *To prevent mRNA from binding back to the oligo-dT beads, the plate can be put on ice immediately after the 80°C incubation. This is a critical step if for any reason the plate cannot be placed on the magnet immediately after incubation*
+
+### References
+
+[^1]:
+	Kumar, R., Y. Ichihashi, S. Kimura, D. Chitwood, L. Headland, J. Peng, J. Maloof and N. Sinha (2012). "A High-Throughput Method for Illumina RNA-Seq Library Preparation." <u>Frontiers in Plant Science</u> *3*: 202.

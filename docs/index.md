@@ -11,3 +11,5 @@ Etiam venenatis, justo et ultricies tristique, turpis felis accumsan mi, vitae v
 **Tn5 RNA-Seq**
 _Luisa Pallares, Julien F. Ayroles_
 bioRxiv 000000; doi: <https://doi.org/10.1101/000000>
+
+[![Figure describing the protocol](FigureDescribingProtocol.png){:width="500px"}](FigureDescribingProtocol.pdf)
