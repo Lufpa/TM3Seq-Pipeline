@@ -8,7 +8,9 @@ Dependencies are installed using [Bioconda](https://bioconda.github.io/).
 
 ## Overview
 
-This workflow is designed to generate counts of the number of uniquely mapped reads to each gene for each sample provided.
+The workflow was design to streamline the analsys of TM3'seeq data, however, it can be used to process FASTQ files derived form any other RNA-seq protocol once the samples have been demultiplexed. This step might vary depending on the protocol used for library preparation.
+
+This workflow is designed to facilitate the analysis of RNA-seq data derived from TM3'seq. Starting from FASTQ files, the pipeline 1) trims raw reads, 2) aligns trimmed reads, and 3) counts the number of reads mapping to each gene. The output is a gene counts file that can be imported in standard software for the analisys of RNA-seq data.
 
 ### Inputs
 
