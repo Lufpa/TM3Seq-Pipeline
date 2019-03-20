@@ -1,14 +1,10 @@
-# Tn5 RNA-Seq
-
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction protocol](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 ## Abstract
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam ante rutrum quam rhoncus elementum. Fusce bibendum metus at leo dapibus rutrum. Aenean dictum neque vel libero aliquet gravida. Suspendisse tincidunt erat nibh, sed lacinia erat lobortis id. Donec quis tortor aliquam, viverra ex tincidunt, sollicitudin est. Vivamus nec velit et nunc vehicula tincidunt. Nulla dapibus ullamcorper odio, eu elementum felis rutrum sed. Pellentesque iaculis nunc sed elit tincidunt mollis. Quisque auctor libero non pulvinar tincidunt. Aliquam erat volutpat. Nunc interdum mauris in orci ultricies, eu convallis urna suscipit.
+RNA-seq has become the standard tool for collecting genome-wide expression data in very diverse fields, from ecology and developmental biology to quantitative genetics and medical genomics. However, RNA-seq library preparation as well as its sequencing requirements are still prohibitive for many laboratories, in particular when large sample sizes are involved. Recently, the field of single-cell transcriptomics has been able to reduce costs and increase throughput by adopting an approach that barcodes individual samples during reverse transcription and pools them before cDNA synthesis, effectively processing a single sample for most of the library preparation procedure. In contrast, RNA-seq protocols where each sample is processed individually are significantly more expensive and lower throughput than single-cell approaches. Yet, many experimental approaches are designed around follow-up experiments on a subset of samples, and therefore require that individual libraries are generated for each sample. In order to fill this gap, we have developed TM3’seq, a 3’-enriched library preparation protocol that uses Tn5 transposase and preserves the sample identity at each step. TM3’seq is designed for the high-throughput processing of individual samples (96 samples in 6h, with only 3h hands-on time) at a fraction of the cost of commercial kits ($1.5 per sample), while recovering gene expression profiles of the same quality as the commercial kits. We expect that the cost- and time-efficient features of TM3’seq make large-scale RNA-seq experiments more permissive for the entire scientific community.
 
-Etiam venenatis, justo et ultricies tristique, turpis felis accumsan mi, vitae vulputate augue massa at tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eleifend purus vel magna convallis fermentum. Duis efficitur consequat ex non iaculis. Fusce dolor dui, congue nec laoreet vel, molestie id elit. Fusce fermentum eros lorem, a varius ante pretium ut. Cras lacus purus, congue vitae rutrum at, auctor quis ante. Donec quis est sed diam interdum posuere nec sit amet velit. Nullam volutpat massa est, a imperdiet eros dapibus fermentum. Phasellus volutpat ipsum eget molestie facilisis. 
-
-**Tn5 RNA-Seq**
+**TM3'seq**
 _Luisa Pallares, Julien F. Ayroles_
 bioRxiv 000000; doi: <https://doi.org/10.1101/000000>
 
