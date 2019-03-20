@@ -1,6 +1,6 @@
-# Snakemake workflow: TM3'-seq Pipeline
+# Snakemake workflow: TM3'seq Pipeline
 
-Workflow for the TM3'-seq manuscript.
+Workflow for the TM3'seq manuscript.
 
 The workflow is written using [Snakemake](https://snakemake.readthedocs.io/).
 Dependencies are installed using [Bioconda](https://bioconda.github.io/).
@@ -8,9 +8,9 @@ Dependencies are installed using [Bioconda](https://bioconda.github.io/).
 
 ## Overview
 
-The workflow was design to streamline the analsys of TM3'seeq data, however, it can be used to process FASTQ files derived form any other RNA-seq protocol once the samples have been demultiplexed. This step might vary depending on the protocol used for library preparation.
+This workflow was designed to streamline the analysis of TM3'seq data. However, it can be used to process FASTQ files derived form any other RNA-seq protocol once the samples have been demultiplexed. The details of demultiplexing may vary depending on the protocol used for library preparation.
 
-This workflow is designed to facilitate the analysis of RNA-seq data derived from TM3'seq. Starting from FASTQ files, the pipeline 1) trims raw reads, 2) aligns trimmed reads, and 3) counts the number of reads mapping to each gene. The output is a gene counts file that can be imported in standard software for the analisys of RNA-seq data.
+Starting with FASTQ files, the workflow 1) trims raw reads, 2) aligns them, and 3) counts the number of reads mapping to each gene. The output is a gene counts file that can be imported in standard software for the analisys of RNA-seq data.
 
 ### Inputs
 
@@ -137,9 +137,3 @@ snakemake \
     --output-wait 60
 ```
 
-
-## Additional Scripts
-
-*   `RNAseq_demultiplex.sh`
-
-    It demultiplexes samples based on i7 barcodes. If several plates (different i5) were sequenced together, an initial demultiplexing step has to be done using i5 barcodes (custome code: i5_parse_gencomp1_template.sbatch)
