@@ -2,19 +2,26 @@
 title: Tn5 RNA-Seq - TM3'seq Protocol
 ---
 
-## TM3'seq Protocol
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction Protocol](mrna_extraction) \| [TM3'seq Protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
-
+## TM3'seq - library preparation protocol
 
 ### Reagents and materials:
 **(a)** SMARTScribe ™ RT (Takara, #639538), **(b)** dNTPs (NEB, #N0447S), **(c)** DTT (Takara, #639538), **(d)** 5x First-Strand buffer (Takara, #639538), **(e)** OneTaq HS Quick-load 2x (NEB, #M0486L), **(f)** re-association buffer, **(g)** re-association buffer:glycerol, **(h)** TAPS buffer 5x, **(i)** SDS (Promega, #V6551), **(j)** Agencourt AMPure XP beads (Beckman Coulter, #A63881).
 
 ### Oligos:
-See supplementary table 1
+**Tn5ME-B-30T**	5’-GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTV-3'
+**B-tag-sw**	/5Biosg/ACCCCATGGGGCTACACGACGCTCTTCCGATCTrGrGrG
+**Adapter-A (Illumina)**	5’- TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG-3’
+**Tn5MErev** (Picelli *et al* 2014)[^1]	5’-[phos]CTGTCTCTTATACACATCT-3’
+**i5 (Illumina Idx5)**	AATGATACGGCGACCACCGAGATCTACAC**NNNNNNNN**TCGTCGGCAGCGTC
+**i7 (Illumina Idx7)**	CAAGCAGAAGACGGCATACGAGAT**NNNNNNNN**GTCTCGTGGGCTCGG
+
+**N** *indicates i7 or i5 barcodes. Standard Illumina barcodes were used.*
+
 
 ### Buffers:
-**(a)** re-association buffer [store at room T], 10mM Tris pH 8.0, 50mM NaCl, 1mM EDTA. **(b)** re-association buffer:glycerol 1:1 [store at room T], mix one volume of re-association buffer and one volume of glycerol. **(c)** TAPS buffer 5x pH 8.5 from (Picelli, Faridani et al. (2014))[^1] [store at 4°C], 50mM TAPS, 25mM MgCl2, 50% v/v DMF. 
+**(a)** re-association buffer [store at room T], 10mM Tris pH 8.0, 50mM NaCl, 1mM EDTA. **(b)** re-association buffer:glycerol 1:1 [store at room T], mix one volume of re-association buffer and one volume of glycerol. **(c)** TAPS buffer 5x pH 8.5 from (Picelli *et al*. (2014))[^1] [store at 4°C], 50mM TAPS, 25mM MgCl2, 50% v/v DMF. 
 
 ### Equipment:
 **(a)** Thermal cycler.
@@ -69,6 +76,8 @@ See supplementary table 1
     | 5           | 4°C         | Hold  |
 
 #### Anneal the adapters that will be loaded into the Tn5 transposase
+
+**Note:** *This step can be done once, and the annealed adapters can be placed at 4°C for long-term storage. The annealed adapters stored at 4°C can be directly used in step 10 of this protocol.* 
 
 9.  Anneal the adapter-A forward and reverse oligos by mixing 10µl adapter-A oligo (100µM), 10µl Tn5MErev oligo (100µM), and 80µl of re-association buffer. To anneal the oligos run the following program in the thermal cycler.
 
