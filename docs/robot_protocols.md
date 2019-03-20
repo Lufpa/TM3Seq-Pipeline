@@ -1,8 +1,8 @@
 ---
-title: Tn5 RNA-Seq Liquid-handling Robot Protocols
+title: TM3'seq -  Liquid-handling Robot Protocols
 ---
 
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction Protocol](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction Protocol](mrna_extraction) \| [TM3'seq Protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 ## Liquid-handling robot protocols
 

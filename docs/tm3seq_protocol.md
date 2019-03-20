@@ -1,5 +1,5 @@
 ---
-title: Tn5 RNA-Seq - TM3'seq Protocol
+title: TM3'seq - TM3'seq Protocol
 ---
 
 \| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction Protocol](mrna_extraction) \| [TM3'seq Protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
