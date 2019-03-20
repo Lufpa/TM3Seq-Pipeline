@@ -1,6 +1,6 @@
-# Snakemake workflow: Tn5 RNA-Seq Pipeline
+# Snakemake workflow: TM3'-seq Pipeline
 
-Workflow for the Tn5-TagSeq manuscript.
+Workflow for the TM3'-seq manuscript.
 
 The workflow is written using [Snakemake](https://snakemake.readthedocs.io/).
 Dependencies are installed using [Bioconda](https://bioconda.github.io/).
@@ -8,11 +8,11 @@ Dependencies are installed using [Bioconda](https://bioconda.github.io/).
 
 ## Overview
 
-This workflow is designed to generate counts of the number of uniquly mapped reads to each gene for each sample provided.
+This workflow is designed to generate counts of the number of uniquely mapped reads to each gene for each sample provided.
 
 ### Inputs
 
-*   Fastq files for each sample
+*   FASTQ files for each sample
 *   Reference sequence in FASTA format
 *   Gene model in GTF format
 *   Configuration file(s) in YAML format
@@ -26,11 +26,11 @@ This workflow is designed to generate counts of the number of uniquly mapped rea
 
 ### Workflow
 
-1.  **Fastq summary and QC metrics** - Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to determine some basic QC metrics from the raw fastq files
+1.  **FASTQ summary and QC metrics** - Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to determine some basic QC metrics from the raw FASTQ files
 2.  **Trim reads** - Use [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) to trim off adapter and low quality sequence from the ends of reads
 3.  **Align reads** - Use [STAR](https://github.com/alexdobin/STAR) to aign reads to the genome, accounting for known splice junctions
-4.  **Deduplicate (optional)** - Remove duplicates using [nudup](https://github.com/nugentechnologies/nudup) which utilizes unique molecular identifiers
-5.  **Count** - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanyify the number of reads uniquly mapped to each gene
+4.  **Deduplicate (optional)** - Remove duplicates using [nudup](https://github.com/nugentechnologies/nudup) which utilizes unique molecular identifiers (UMI)
+5.  **Count** - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanyify the number of reads uniquely mapped to each gene
 6.  **Summarize** - Combine the count files and run [MultiQC](https://multiqc.info/) to generate a summary report
 
 
@@ -140,4 +140,4 @@ snakemake \
 
 *   `RNAseq_demultiplex.sh`
 
-    Demultiplexes samples based on i7 barcodes. If several plates (different i5) were sequenced together, an initial demultiplex step has to be done using Lance's i5 code (i5_parse_gencomp1_template.sbatch)
+    It demultiplexes samples based on i7 barcodes. If several plates (different i5) were sequenced together, an initial demultiplexing step has to be done using i5 barcodes (custome code: i5_parse_gencomp1_template.sbatch)
