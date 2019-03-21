@@ -1,6 +1,6 @@
 theme: jekyll-theme-slate
-title: Tn5 RNA-Seq
-description: Tn5 RNA-Seq by Luisa Pallares and Julien Ayroles
+title: TM3'seq
+description: Tagmentation-Mediated 3'-enriched RNA-seq
 markdown: CommonMarkGhPages
 commonmark:
   options: ["SMART", "FOOTNOTES"]

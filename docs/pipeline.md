@@ -2,18 +2,18 @@
 title: Tn5 RNA-Seq Pipeline
 ---
 
-## Tn5 RNA-Seq Pipeline
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extractioni Protocol](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
-
-Workflow for the Tn5-TagSeq manuscript.
+## TM3'seq Data Analysis Pipeline
 
 The workflow is written using [Snakemake](https://snakemake.readthedocs.io/).
 Dependencies are installed using [Bioconda](https://bioconda.github.io/).
 
 ## Overview
 
-This workflow is designed to generate counts of the number of uniquly mapped reads to each gene for each sample provided.
+The workflow was design to streamline the analsys of TM3'seeq data, however, it can be used to process FASTQ files derived form any other RNA-seq protocol once the samples have been demultiplexed. This step might vary depending on the protocol used for library preparation.
+
+This workflow is designed to facilitate the analysis of RNA-seq data derived from TM3'seq. Starting from FASTQ files, the pipeline 1) trims raw reads, 2) aligns trimmed reads, and 3) counts the number of reads mapping to each gene. The output is a gene counts file that can be imported in standard software for the analisys of RNA-seq data.
 
 ### Inputs
 

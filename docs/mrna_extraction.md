@@ -1,10 +1,10 @@
 ---
-title: Tn5 RNA-Seq - mRNA Extraction
+title: TM3'seq - mRNA extraction protocol
 ---
 
-## mRNA extraction
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction Protocol](mrna_extraction) \| [TM3'seq Protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extraction](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+## mRNA extraction protocol
 
 *This is an optional step given that total RNA can be used as input material for TM3’seq. RNA extraction was chosen instead of total RNA isolation because it can be implemented in 96-well plates and liquid-handling platforms to increase throughput. The mRNA isolation protocol is based on (Kumar, Ichihashi et al. (2012))[^1]*
 
