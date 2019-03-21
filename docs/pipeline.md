@@ -1,8 +1,8 @@
 ---
-title: Tn5 RNA-Seq Pipeline
+title: TM3'seq Pipeline
 ---
 
-\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extractioni Protocol](mrna_extraction) \| [TM3'seq protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
+\| [Home](index) \| [Analysis Pipeline](pipeline) \| [mRNA Extractioni Protocol](mrna_extraction) \| [TM3'seq Protocol](tm3seq_protocol) \| [Liquid-Handling Robot Protocols](robot_protocols) \|
 
 ## TM3'seq Data Analysis Pipeline
 
@@ -11,13 +11,13 @@ Dependencies are installed using [Bioconda](https://bioconda.github.io/).
 
 ## Overview
 
-The workflow was design to streamline the analsys of TM3'seeq data, however, it can be used to process FASTQ files derived form any other RNA-seq protocol once the samples have been demultiplexed. This step might vary depending on the protocol used for library preparation.
+This workflow was designed to streamline the analysis of TM3'seq data. However, it can be used to process FASTQ files derived form any other RNA-seq protocol once the samples have been demultiplexed. The details of demultiplexing may vary depending on the protocol used for library preparation.
 
-This workflow is designed to facilitate the analysis of RNA-seq data derived from TM3'seq. Starting from FASTQ files, the pipeline 1) trims raw reads, 2) aligns trimmed reads, and 3) counts the number of reads mapping to each gene. The output is a gene counts file that can be imported in standard software for the analisys of RNA-seq data.
+Starting with FASTQ files, the workflow 1) trims raw reads, 2) aligns them, and 3) counts the number of reads mapping to each gene. The output is a gene counts file that can be imported in standard software for the analisys of RNA-seq data.
 
 ### Inputs
 
--   Fastq files for each sample
+-   FASTQ files for each sample
 -   Reference sequence in FASTA format
 -   Gene model in GTF format
 -   Configuration file(s) in YAML format
@@ -31,11 +31,11 @@ This workflow is designed to facilitate the analysis of RNA-seq data derived fro
 
 ### Workflow
 
-1.  **Fastq summary and QC metrics** - Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to determine some basic QC metrics from the raw fastq files
+1.  **FASTQ summary and QC metrics** - Use [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to determine some basic QC metrics from the raw fastq files
 2.  **Trim reads** - Use [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) to trim off adapter and low quality sequence from the ends of reads
 3.  **Align reads** - Use [STAR](https://github.com/alexdobin/STAR) to aign reads to the genome, accounting for known splice junctions
 4.  **Deduplicate (optional)** - Remove duplicates using [nudup](https://github.com/nugentechnologies/nudup) which utilizes unique molecular identifiers
-5.  **Count** - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanyify the number of reads uniquly mapped to each gene
+5.  **Count** - Use [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) (part of the [Subread package](http://subread.sourceforge.net/)) to quanyify the number of reads uniquely mapped to each gene
 6.  **Summarize** - Combine the count files and run [MultiQC](https://multiqc.info/) to generate a summary report
 
 
@@ -60,7 +60,7 @@ This workflow is designed to facilitate the analysis of RNA-seq data derived fro
 
 2.  Input data
 
-    Place demultiplexed `fastq.gz` files in a `data` directory (see `RNAseq_demultiplex.sh` below)
+    Place demultiplexed `fastq.gz` files in a `data` directory
 
 3.  Edit configuration files as needed
 
@@ -134,8 +134,3 @@ snakemake \
     --output-wait 60
 ```
 
-## Additional Scripts
-
--   `RNAseq_demultiplex.sh`
-
-    Demultiplexes samples based on i7 barcodes. If several plates (different i5) were sequenced together, an initial demultiplex step has to be done using Lance's i5 code (i5_parse_gencomp1_template.sbatch)
