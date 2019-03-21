@@ -62,7 +62,7 @@ Starting with FASTQ files, the workflow 1) trims raw reads, 2) aligns them, and 
 
 2.  Input data
 
-    Place demultiplexed `fastq.gz` files in a `data` directory (see `RNAseq_demultiplex.sh` below)
+    Place demultiplexed `fastq.gz` files in a `data` directory
 
 3.  Edit configuration files as needed
 
