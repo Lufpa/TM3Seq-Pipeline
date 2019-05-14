@@ -150,7 +150,7 @@ snakemake \
 ```bash
 snakemake \
     --configfile "myconfig.yml" \
-    --cluster-config "cetus_cluster.yml" \
+    --cluster-config "cetus_cluster_config.yml" \
     --drmaa " --cpus-per-task={cluster.n} --mem={cluster.memory} --qos={cluster.qos} --time={cluster.time}" \
     --use-conda \
     --cores 1000 \
