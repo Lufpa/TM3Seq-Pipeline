@@ -108,6 +108,26 @@ See the [Snakemake documentation for a list of all options](https://snakemake.re
 
 ## Examples 
 
+### Dry run of the workflow with five samples
+
+```bash
+snakemake --configfile "myconfig.yml" --dryrun
+``` 
+
+```
+Job counts:
+        count   jobs
+        1       all
+        1       combined_counts
+        5       count
+        5       fastqc
+        1       multiqc
+        5       star_align
+        1       star_genome_index
+        5       trimmomatic
+        24
+```
+
 ### Running workflow on a single computer with 4 threads
 
 ```bash
