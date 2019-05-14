@@ -1,17 +1,21 @@
 # Pattern to input fastq files, use {sample} to indicate portion of filename
 # that corresponds to the sample name (e.g. data/{sample}.fq.gz)
+# The pipeline will automatically detect matching files and process each of them
 fastq_file_pattern: "data/{sample}.fastq.gz"
 
 # Output directories
-# Directory to put working files (trimmed reads, bam files, etc.)
+# Directory to put intermediate working files (trimmed reads, bam files, etc.)
 working_dir: "results/working"
 # Directory to store final results (count matrix, summary reports)
 results_dir: "results"
 
 ref:
-  # the reference fasta file
+  # The fasta file for the reference sequence (STAR index will be built automatically)
   fasta: "data/my_genome/my_genome.fa"
-  # gtf file with transcripts
+  # A GTF file with transcripts 
+  # The file should contain `exon` entries, each specifying a `gene_id` attribute
+  # GTF Files from ENSEMBL work well
+  # See http://bioinf.wehi.edu.au/featureCounts/ for more information
   annotation: "data/my_genome/my_genome.gtf"
 
 # UMI related options
@@ -23,13 +27,16 @@ umi:
   mark_umi_duplicates: No
 
 params:
+  # FastQC parameters, see http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
   fastqc:
     extra: ""
+  # STAR parameters, see https://github.com/alexdobin/STAR
   star:
     # optional star parameters
     extra: ""
     # Command to unzip gzip files to stdout (zcat, gzcat, etc.)
     zcat_command: "zcat"
+  # Trimmomatic parameters, see http://www.usadellab.org/cms/?page=trimmomatic
   trimmomatic:
     # list of trimmers (see manual)
     trimmers:
@@ -38,12 +45,14 @@ params:
       - "MINLEN:20"
     # optional parameters
     extra: ""
+  # NuGEN nudup parameters, see https://github.com/nugentechnologies/nudup
   nudup:
     umi_length: 8
     umi_start: 8
     tmp_dir: "/tmp"
     # optional parameters
     extra: ""
+  # featureCounts paramters, see http://bioinf.wehi.edu.au/featureCounts/
   featurecounts:
     feature_type: "exon"
     attribute_type: "gene_id"
