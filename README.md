@@ -145,9 +145,13 @@ snakemake \
     --cores 100
 ``` 
 
-### Running workflow on Princeton LSI cluster using [DRMAA](https://en.wikipedia.org/wiki/DRMAA)
+### Running workflow on Princeton LSI cluster using [DRMAA](https://en.wikipedia.org/wiki/DRMAA).
+
+Note: When using DRMAA you may need to export the `DRMAA_LIBRARY_PATH`. 
+On the LSI cluster this can be done by running `module load slurm`.
 
 ```bash
+module load slurm
 snakemake \
     --configfile "myconfig.yml" \
     --cluster-config "cetus_cluster_config.yml" \
