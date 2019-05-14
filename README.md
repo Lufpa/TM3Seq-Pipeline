@@ -23,7 +23,7 @@ Starting with FASTQ files, the workflow 1) trims raw reads, 2) aligns them, and 
 
 *   `combined_gene_counts.tsv` - Tab delimited file of gene counts, one row per gene and one column per sample
 *   `multiqc.html` - Quality control summary showing number of reads, trimming, mapping, and counting statistics
-*   `logs\` - Directory of log files for each job
+*   `logs\` - Directory of log files for each job, check here first if you run into errors
 *   `working\` - Directory containing intermediate files for each job (*e.g.* bam files and count files for each sample)
 
 ### Workflow
