@@ -1,6 +1,7 @@
 theme: jekyll-theme-slate
 title: TM3'seq
 description: Tagmentation-Mediated 3'-enriched RNA-seq
+description: bioRxiv https://doi.org/10.1101/585810
 markdown: CommonMarkGhPages
 commonmark:
   options: ["SMART", "FOOTNOTES"]
