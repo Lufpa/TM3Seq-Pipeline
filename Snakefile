@@ -9,9 +9,9 @@ from snakemake.utils import min_version
 min_version("5.2.0")
 
 configfile: "config.defaults.yml"
-#samples = pd.read_table(config["samples"], index_col="sample")
 sample_files = snakemake.utils.listfiles(config["fastq_file_pattern"])
 samples = dict((y[0], x) for x, y in sample_files)
+assert len(samples) > 0, "ERROR: No fastq files were found using pattern '{}' (set in configfile)".format(config["fastq_file_pattern"])
 
 log_dir = config["results_dir"] + "/logs"
 

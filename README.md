@@ -23,7 +23,7 @@ Starting with FASTQ files, the workflow 1) trims raw reads, 2) aligns them, and 
 
 *   `combined_gene_counts.tsv` - Tab delimited file of gene counts, one row per gene and one column per sample
 *   `multiqc.html` - Quality control summary showing number of reads, trimming, mapping, and counting statistics
-*   `logs\` - Directory of log files for each job
+*   `logs\` - Directory of log files for each job, check here first if you run into errors
 *   `working\` - Directory containing intermediate files for each job (*e.g.* bam files and count files for each sample)
 
 ### Workflow
@@ -108,6 +108,26 @@ See the [Snakemake documentation for a list of all options](https://snakemake.re
 
 ## Examples 
 
+### Dry run of the workflow with five samples
+
+```bash
+snakemake --configfile "myconfig.yml" --dryrun
+``` 
+
+```
+Job counts:
+        count   jobs
+        1       all
+        1       combined_counts
+        5       count
+        5       fastqc
+        1       multiqc
+        5       star_align
+        1       star_genome_index
+        5       trimmomatic
+        24
+```
+
 ### Running workflow on a single computer with 4 threads
 
 ```bash
@@ -125,12 +145,16 @@ snakemake \
     --cores 100
 ``` 
 
-### Running workflow on Princeton LSI cluster using [DRMAA](https://en.wikipedia.org/wiki/DRMAA)
+### Running workflow on Princeton LSI cluster using [DRMAA](https://en.wikipedia.org/wiki/DRMAA).
+
+Note: When using DRMAA you may need to export the `DRMAA_LIBRARY_PATH`. 
+On the LSI cluster this can be done by running `module load slurm`.
 
 ```bash
+module load slurm
 snakemake \
     --configfile "myconfig.yml" \
-    --cluster-config "cetus_cluster.yml" \
+    --cluster-config "cetus_cluster_config.yml" \
     --drmaa " --cpus-per-task={cluster.n} --mem={cluster.memory} --qos={cluster.qos} --time={cluster.time}" \
     --use-conda \
     --cores 1000 \
