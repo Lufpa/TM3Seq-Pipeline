@@ -6,6 +6,6 @@ RNA-seq has become the standard tool for collecting genome-wide expression data 
 
 **TM3’seq: a tagmentation-mediated 3’ sequencing approach for improving scalability of RNA-seq experiments**
 _Luisa F. Pallares, Serge Picard, Julien F. Ayroles._
-(2019) bioRxiv https://doi.org/10.1101/585810
+(2020) G3 https://doi.org/10.1534/g3.119.400821
 
 [![Figure describing the protocol](FigureDescribingProtocol.png)](FigureDescribingProtocol.pdf)
