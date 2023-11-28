@@ -22,7 +22,7 @@ rule multiqc:
     output:
         config["results_dir"] + "/multiqc.html"
     params:
-        multiqc="--cl_config \"trimmomatic: {s_name_filenames: true}\"",  # Optional: extra parameters for multiqc.
+        multiqc="--cl-config \"trimmomatic: {s_name_filenames: true}\"",  # Optional: extra parameters for multiqc.
         output_dir=config['results_dir'],
         output_name="multiqc.html"
     log:
