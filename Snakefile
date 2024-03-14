@@ -24,8 +24,6 @@ if_SE=all("R2" not in name for name in samples.keys())
 
 def get_matched_fastq(wildcards):   
     paired_files = [samples[i] for i in samples.keys() if ("R1" in i or "R2" in i) and wildcards.sample in i]
-    print(wildcards)
-    print(paired_files)
     if len(paired_files) == 2 :
         return paired_files
     else:
