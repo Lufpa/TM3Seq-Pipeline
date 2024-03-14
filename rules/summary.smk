@@ -15,10 +15,10 @@ from os import path
 
 rule multiqc:
     input:
-        expand(log_dir + "/trimmomatic/{sample}.log", sample=samples.keys()),
-        expand(config["working_dir"] + "/star/{sample}/Log.final.out", sample=samples.keys()),
-        expand(config["working_dir"] + "/featurecounts/{sample}_counts.tsv.summary", sample=samples.keys()),
-        expand(config["working_dir"] + "/fastqc/{sample}_fastqc.zip", sample=samples.keys())
+        expand(log_dir + "/trimmomatic/{sample}.log", sample = SAMPLES_ALL if if_SE else SAMPLES_PAIRED),
+        expand(config["working_dir"] + "/star/{sample}/Log.final.out", sample = SAMPLES_ALL if if_SE else SAMPLES_PAIRED),
+        expand(config["working_dir"] + "/featurecounts/{sample}_counts.tsv.summary", sample = SAMPLES_ALL if if_SE else SAMPLES_PAIRED),
+        expand(config["working_dir"] + "/fastqc/{sample}_fastqc.zip", sample=SAMPLES_ALL)
     output:
         config["results_dir"] + "/multiqc.html"
     params:
