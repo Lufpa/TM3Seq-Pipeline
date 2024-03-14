@@ -39,7 +39,7 @@ def get_paired_fastq(wildcards):
 rule all:
     input:
         config["results_dir"] + "/multiqc.html",
-        #config["results_dir"] + "/combined_gene_counts.tsv"
+        config["results_dir"] + "/combined_gene_counts.tsv"
         #expand("working/trimmed/{sample}.fastq.gz", sample=samples.keys())
 
 include: "rules/fastqc.smk"
