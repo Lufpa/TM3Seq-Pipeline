@@ -1,7 +1,7 @@
 # Pattern to input fastq files, use {sample} to indicate portion of filename
 # that corresponds to the sample name (e.g. data/{sample}.fq.gz)
 # The pipeline will automatically detect matching files and process each of them
-fastq_file_pattern: "data/{sample}.fastq.gz"
+fastq_file_pattern: "data"
 
 # Output directories
 # Directory to put intermediate working files (trimmed reads, bam files, etc.)
