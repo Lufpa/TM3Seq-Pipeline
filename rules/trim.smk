@@ -3,7 +3,7 @@ if if_SE:
         input:
             get_fastq
         output:
-            fastq=config["working_dir"] + "/trimmed/{sample}.fastq.gz"
+            fastq=config["working_dir"] + "/trimmed/{sample}.fastq.gz",
         params:
             trimmer=" ".join(config["params"]["trimmomatic"]["trimmers"]),
             extra=config["params"]["trimmomatic"]["extra"]
@@ -24,8 +24,10 @@ else:
         input:
             get_paired_fastq
         output:
-            fastq1=config["working_dir"] + "/trimmed/{sample}_R1.fastq.gz",
-            fastq2=config["working_dir"] + "/trimmed/{sample}_R2.fastq.gz"
+            paired1=config["working_dir"] + "/trimmed/{sample}_R1_paired.fastq.gz",
+            unpaired1=config["working_dir"] + "/trimmed/{sample}_R1_unpaired.fastq.gz",
+            paired2=config["working_dir"] + "/trimmed/{sample}_R2_paired.fastq.gz",
+            unpaired2=config["working_dir"] + "/trimmed/{sample}_R2_unpaired.fastq.gz"
         params:
             trimmer=" ".join(config["params"]["trimmomatic"]["trimmers"]),
             extra=config["params"]["trimmomatic"]["extra"]

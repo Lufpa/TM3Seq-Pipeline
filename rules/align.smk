@@ -53,8 +53,8 @@ if if_SE:
 else:        
     rule star_align_PE:
         input:
-            fastq1=config["working_dir"] + "/trimmed/{sample}_R1.fastq.gz",
-            fastq2=config["working_dir"] + "/trimmed/{sample}_R2.fastq.gz",
+            fastq1=config["working_dir"] + "/trimmed/{sample}_R1_paired.fastq.gz",
+            fastq2=config["working_dir"] + "/trimmed/{sample}_R2_paired.fastq.gz",
             genome_index=star_genome_dir
         output:
             bam=config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam",
@@ -71,7 +71,7 @@ else:
             "{config[params][star][extra]} "
             "--runThreadN {threads} "
             "--genomeDir {input.genome_index:q} "
-            "--readFilesIn {input.fastq1:q},{input.fastq2:q} "
+            "--readFilesIn {input.fastq1:q} {input.fastq2:q} "
             "--readFilesCommand {config[params][star][zcat_command]} "
             "--outSAMtype BAM SortedByCoordinate "
             "--outFileNamePrefix {params.prefix:q} "
