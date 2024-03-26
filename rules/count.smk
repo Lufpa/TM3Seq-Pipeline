@@ -27,7 +27,7 @@ rule count:
 rule combined_counts:
     input:
         expand(config["working_dir"] + "/featurecounts/{sample}_counts.tsv",
-               sample=samples.keys())
+               sample = SAMPLES_ALL if if_SE else SAMPLES_PAIRED)
     output:
         config["results_dir"] + "/combined_gene_counts.tsv"
     run:
