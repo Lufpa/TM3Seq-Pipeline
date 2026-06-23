@@ -4,3 +4,4 @@ channels:
     - defaults
 dependencies:
     - multiqc=1.15
+    - pandas=2.2.2

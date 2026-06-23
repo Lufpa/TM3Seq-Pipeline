@@ -8,6 +8,8 @@ fastq_file_pattern: "data"
 working_dir: "results/working"
 # Directory to store final results (count matrix, summary reports)
 results_dir: "results"
+# run the pipeline in single end or paired end
+if_SE: None # Options: True (force single-end), False (force paired-end), None (auto-detect)
 
 ref:
   # The fasta file for the reference sequence (STAR index will be built automatically)

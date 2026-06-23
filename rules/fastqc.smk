@@ -6,7 +6,7 @@ rule fastqc:
     log:
         log_dir + "/fastqc/{sample}.log"
     params:
-        outdir=config["working_dir"] + "/fastqc/{sample}"
+        outdir=config["working_dir"] + "/fastqc/{sample}",
     threads: 32
     conda:
         "../envs/fastqc.yml"
@@ -20,4 +20,5 @@ rule fastqc:
         "{input:q} "
         ">{log:q} 2>&1 && "
         "mv '{params.outdir}/'*_fastqc.zip {output:q} && "
-        "rm -rf {params.outdir:q}"
+        "rm -rf {params.outdir:q} "
+    

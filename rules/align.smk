@@ -27,13 +27,15 @@ rule star_genome_index:
 if if_SE:
     rule star_align_SE:
         input:
-            fastq=config["working_dir"] + "/trimmed/{sample}.fastq.gz",
+            fastq=config["working_dir"] + "/trimmed/{sample}_trimmed.fastq.gz",
             genome_index=star_genome_dir
         output:
-            bam=config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam",
-            log=config["working_dir"] + "/star/{sample}/Log.final.out"
+            bam=config["working_dir"] + "/star/{sample}/{sample}_Aligned.sortedByCoord.out.bam",
+            log=config["working_dir"] + "/star/{sample}/{sample}_Log.final.out"
         params:
-            prefix=config["working_dir"] + "/star/{sample}/"
+            prefix=config["working_dir"] + "/star/{sample}/",
+            bam_oldname=config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam",
+            log_oldname=config["working_dir"] + "/star/{sample}/Log.final.out"
         log:
             log_dir + "/star/{sample}.log"
         threads: 32
@@ -49,7 +51,10 @@ if if_SE:
             "--outSAMtype BAM SortedByCoordinate "
             "--outFileNamePrefix {params.prefix:q} "
             "--outStd Log "
-            ">{log:q} 2>&1"
+            ">{log:q} 2>&1 && "
+            "mv {params.bam_oldname} {output.bam} && "
+            "mv {params.log_oldname} {output.log}"
+            
 else:        
     rule star_align_PE:
         input:
@@ -57,10 +62,12 @@ else:
             fastq2=config["working_dir"] + "/trimmed/{sample}_R2_paired.fastq.gz",
             genome_index=star_genome_dir
         output:
-            bam=config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam",
-            log=config["working_dir"] + "/star/{sample}/Log.final.out"
+            bam=config["working_dir"] + "/star/{sample}/{sample}_Aligned.sortedByCoord.out.bam",
+            log=config["working_dir"] + "/star/{sample}/{sample}_Log.final.out"
         params:
-            prefix=config["working_dir"] + "/star/{sample}/"
+            prefix=config["working_dir"] + "/star/{sample}/",
+            bam_oldname=config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam",
+            log_oldname=config["working_dir"] + "/star/{sample}/Log.final.out"
         log:
             log_dir + "/star/{sample}.log"
         threads: 32
@@ -76,4 +83,6 @@ else:
             "--outSAMtype BAM SortedByCoordinate "
             "--outFileNamePrefix {params.prefix:q} "
             "--outStd Log "
-            ">{log:q} 2>&1"
+            ">{log:q} 2>&1 && "
+            "mv {params.bam_oldname} {output.bam} && "
+            "mv {params.log_oldname} {output.log}"

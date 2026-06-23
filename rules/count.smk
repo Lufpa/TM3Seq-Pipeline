@@ -1,10 +1,12 @@
 rule count:
     input:
         gtf=config["ref"]["annotation"],
-        bam=config["working_dir"] + "/nudup/{sample}.sorted.markdup.bam" if config["umi"]["mark_umi_duplicates"] else config["working_dir"] + "/star/{sample}/Aligned.sortedByCoord.out.bam"
+        bam=config["working_dir"] + "/nudup/{sample}.sorted.markdup.bam" if config["umi"]["mark_umi_duplicates"] else config["working_dir"] + "/star/{sample}/{sample}_Aligned.sortedByCoord.out.bam"
     output:
         counts=config["working_dir"] + "/featurecounts/{sample}_counts.tsv",
         summary=config["working_dir"] + "/featurecounts/{sample}_counts.tsv.summary"
+    params:
+        ends="" if if_SE  else "-p"
     log:
         log_dir + "/featurecounts/{sample}.log"
     threads:
@@ -14,6 +16,7 @@ rule count:
     shell:
         "ln -s {input.bam:q} '{wildcards.sample}.bam' && "
         "featureCounts "
+        "{params.ends} "
         "-t {config[params][featurecounts][feature_type]} "
         "-g {config[params][featurecounts][attribute_type]} "
         "-a {input.gtf:q} "
@@ -32,7 +35,7 @@ rule combined_counts:
         config["results_dir"] + "/combined_gene_counts.tsv"
     run:
         shell("cut -f 1,7 {input[0]:q} > {output:q}")
-        for f in input:
+        for f in input[1:]:
             shell("cp {output:q} tmp")
             shell("cut -f 7 {f:q} | paste tmp - > {output:q}")
         shell("rm tmp")

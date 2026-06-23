@@ -19,11 +19,13 @@ log_dir = config["results_dir"] + "/logs"
 
 def get_fastq(wildcards):
     return samples[wildcards.sample]
+    
+if_SE = (all("R1" not in name for name in samples.keys()) or all("R2" not in name for name in samples.keys())) if config['if_SE'] == "None" else config['if_SE']
 
-if_SE = all("R2" not in name for name in samples.keys())
+
 
 def get_matched_fastq(wildcards):   
-    paired_files = [samples[i] for i in samples.keys() if ("R1" in i or "R2" in i) and wildcards.sample in i]
+    paired_files = [samples[i] for i in samples.keys() if f'{wildcards.sample}_R' in i]
     if len(paired_files) == 2 :
         return sorted(paired_files)
     else:
@@ -37,7 +39,8 @@ def get_paired_fastq(wildcards):
 rule all:
     input:
         config["results_dir"] + "/multiqc.html",
-        config["results_dir"] + "/combined_gene_counts.tsv"
+        config["results_dir"] + "/combined_gene_counts.tsv",
+        config['results_dir']+"/QC_table_count.csv"
         #expand("working/trimmed/{sample}.fastq.gz", sample=samples.keys())
 
 include: "rules/fastqc.smk"
